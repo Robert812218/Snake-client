@@ -1,4 +1,5 @@
 const net = require("net");
+let connection;
 
 // establishes a connection with the game server
 const connect = function() {
@@ -19,25 +20,10 @@ const connect = function() {
     console.log("connected user says:", data);
   })
 
-  conn.on('data', (data) => {
-    switch(data) {
-      case 'w':
-        connection.write('Move: up');
-        break;
-      case 'a':
-        connection.write('Move: left');
-        break;
-      case 's':
-        connection.write('Move: down');
-        break;
-      case 'd':
-        connection.write('Move: right');
-        break;
-      
-    }
-  })
-
   return conn;
 };
 
-module.exports = { connect };
+
+module.exports = { 
+  connect
+};
