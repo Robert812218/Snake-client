@@ -8,6 +8,7 @@ const connect = function() {
     host: 'localhost',
     port: '50541'
   });
+  
 
   conn.on('connect', () => {
     console.log('Connected!');
@@ -18,7 +19,7 @@ const connect = function() {
   conn.setEncoding("utf8");
 
   conn.on('data', function(data) {
-    console.log("connected user says:", data);
+    console.log("Connected user says:", data);
   })
 
   return conn;

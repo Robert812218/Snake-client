@@ -1,3 +1,5 @@
+const { connect } = require("./client");
+
 // const net = require("net");
 let connection;
 
@@ -14,6 +16,7 @@ const setupInput = function(conn) {
 };
 
 const handleUserInput = function(key) {
+
   switch(key) {
     case 'w':
       connection.write('Move: up');
@@ -28,7 +31,13 @@ const handleUserInput = function(key) {
       connection.write('Move: right');
       break;
     case 'h':
-      connection.write("YYYYUP");
+      connection.write('Say: HOWDY');
+      break;
+    case 'j':
+      connection.write('Say: best game');
+      break;
+    case 'k':
+      connection.write('Say: YYYUP');
       break;
     case '\u0003':
       process.exit();
